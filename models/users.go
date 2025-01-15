@@ -35,7 +35,7 @@ type UserGetListRequest struct {
 	Limit int64 `json:"limit"`
 }
 
-type UserDelete struct {
+type UserPrimaryKey struct {
 	Id string `json:"id"`
 }
 

@@ -21,11 +21,15 @@ type CategoryRepoI interface {
 }
 
 type CommentRepoI interface {
-	CreateComment(ctx context.Context, req *models.CreateComment) (*models.Comments, error)
+	CreateComment(ctx context.Context, req *models.CreateComment) (*models.Comment, error)
+	DeleteComment(ctx context.Context, req *models.DeleteComment) error
+	GetListComments(ctx context.Context) (*models.GetListCommentResponse, error)
 }
 
 type LinksRepoI interface {
 	CreateLink(ctx context.Context, req *models.CreateLinks) (*models.Links, error)
+	UpdateLink(ctx context.Context, req *models.UpdateLinks) (*models.Links, error)
+	DeleteLinks(ctx context.Context, req *models.DeleteLinks) error
 }
 
 type PostRepoI interface {
@@ -38,9 +42,13 @@ type PostRepoI interface {
 type UserRepoI interface {
 	UserCreate(ctx context.Context, req *models.UserCreate) (*models.User, error)
 	UserUpdate(ctx context.Context, req *models.UserUpdate) (*models.User, error)
-	UserDelete(ctx context.Context, req *models.UserDelete) error
+	GetByIdUser(ctx context.Context, req *models.UserPrimaryKey) (*models.User, error)
 	GetListUser(ctx context.Context) (*models.UserGetListResponse, error)
+	UserDelete(ctx context.Context, req *models.UserPrimaryKey) error
 }
 type ViewsRepoI interface {
 	CreateView(ctx context.Context, req *models.CreateView) (*models.Views, error)
+	UpdateView(ctx context.Context, req *models.UpdateView) (*models.Views, error)
+	GetByIdView(ctx context.Context,req *models.PrimaryKeyView)(*models.Views,error)
+	GetListView(ctx context.Context)(*models.GetListViewResponse,error)	
 }

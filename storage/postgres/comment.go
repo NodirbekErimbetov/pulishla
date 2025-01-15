@@ -17,6 +17,14 @@ func NewCommentRepo(db *pgxpool.Pool) *commentRepo {
 	}
 }
 
-func (r *commentRepo) CreateComment(ctx context.Context, req *models.CreateComment) (*models.Comments, error) {
+func (r *commentRepo) CreateComment(ctx context.Context, req *models.CreateComment) (*models.Comment, error) {
 	return nil, nil
+}
+
+func (r *commentRepo) GetListComments(ctx context.Context)(*models.GetListCommentResponse,error){
+	return nil, nil
+}
+
+func (r *commentRepo) DeleteComment(ctx context.Context,req *models.DeleteComment) error{
+	return nil
 }

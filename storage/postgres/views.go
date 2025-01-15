@@ -20,3 +20,14 @@ func NewViewRepo(db *pgxpool.Pool) *viewRepo {
 func (v *viewRepo) CreateView(ctx context.Context, req *models.CreateView) (*models.Views, error) {
 	return nil, nil
 }
+
+func (v *viewRepo) UpdateView(ctx context.Context, req *models.UpdateView) (*models.Views, error) {
+	return nil, nil
+}
+
+func (v *viewRepo) GetByIdView(ctx context.Context, req *models.PrimaryKeyView) (*models.Views, error) {
+	return nil, nil
+}
+func (v *viewRepo) GetListView(ctx context.Context) (*models.GetListViewResponse, error) {
+	return nil, nil
+}
